@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="../stylesheet/validacion.css">
+        <link rel="stylesheet" href="../stylesheet/main.css">
+        <link rel ="icon" href="../images/iconito/icono-homeland.ico">
+
+        <script src="../javascript/lib/jquery-3.6.4.min.js"></script>
+        <script src="../javascript/lib/jquery.scrolled.js"></script>
+        <script src="../javascript/lib/jquery.ba-throttle-debounce.min.js"></script>
+        <title>Contacto</title>
+    </head>
+<body>
+    <header class="Header">
+        <div class="content-container">
+            <div class="Header-content">
+                <a class="Header-logo" href="../index.html"></a>
+                <nav class="Menu-nav">
+                    <ul class="Menu">
+                        <li class="Menu-item"><a class="Menu-link" href="../index.html">Home</a></li>
+                        <li class="Menu-item"><a class="Menu-link" href="categoria-productos.html">Productos</a></li>
+                        <li class="Menu-item"><a class="Menu-link" href="nosotros.html">Nosotros</a></li>
+                        <li class="Menu-item"><a class="Menu-link Selected" href="contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+                <div class="Sidebar">
+                    <nav class="navbar navbar-light">
+                        <div class="container-fluid">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                            <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                                <div class="offcanvas-header">
+                                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">HOMELAND</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body">
+                                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="nosotros.html">Nosotros</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="categoria-productos.html">Productos</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="contacto.html">Contacto</a>
+                                        </li>                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+     
+            </div>
+          
+        </div>
+    </header>
+    
+    <section>
+        <div class="ViewFull Section"> 
+            <h1 class="Title content-container">Contacto</h1>
+            <div class="Contacto content-container">
+
+               
+
+                <div class="ViewFull-body">
+
+                    Si necesita contactarse con nosotros complete el siguiente formulario y a la brevedad nos comunicaremos con usted. <br>
+
+                    
+                    Teléfono Recepción: <a href="tel:47966850">4796-6850.</a>  <br>
+                    
+                    Horario de 9 a 18 hs. <br>
+
+                    <a href="mailto:info@homeland.com">info@homeland.com</a>
+                    
+                </div>
+                <form id="formulario" method="post" enctype="multipart/form-data" class="Form Form--stacked">
+                    <input type="hidden" name="contact_number">
+                <div class="Form-row" id="attribute-nombre">
+                    <label class="Form-label">Nombre</label>
+                    <div class="Form-control ">
+                        <input class="input" type="text" size="70" name="nombre" value="" required />			
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        <p class="formulario__input-error">El nombre tiene que ser de 4 a 16 dígitos.</p>
+                    </div>
+                </div>
+
+
+                <div class="Form-row" id="attribute-correo">
+                    <label class="Form-label">E-mail</label>
+                    <div class="Form-control">
+                        <input class="input" type="email" size="20" name="correo" value="" required />			
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+                </div>
+
+
+                <div class="Form-row" id="attribute-telefono">
+                    <label class="Form-label">Teléfono</label>
+                    <div class="Form-control ">
+                        <input class="input" type="text" size="70" name="telefono" value="" required />		
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
+                </div>
+
+
+                <div class="Form-row" id="attribute-mensaje">
+                <label class="Form-label">
+                    Consulta 
+                    <span class="Form-label">(Opcional)</span>	
+                </label>
+                <div class="Form-control ">
+                    <textarea class="input" name="consulta" rows="5" ></textarea>			
+                </div>
+                </div>
+
+                <!-- Grupo: Terminos y Condiciones -->
+                <div class="formulario__grupo" id="grupo__terminos">
+                    <label class="Form-label">
+                        <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
+                        <a href="terminos.html" target="_blank">Acepto los Terminos y Condiciones</a> 
+                    </label>
+                </div>
+
+                <div class="formulario__mensaje" id="formulario__mensaje">
+                    <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+                </div>
+
+                <div class="Form-action">
+                    <input type="submit" name="ActionCollectInformation" value="Enviar" class="boton boton--primary" />
+                    <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+                </div>
+
+
+
+                </form>
+                <!-- Script que evita SPAM -->
+                <script>
+                    document.getElementById("formulario").setAttribute("action", "/content/action");
+                </script>
+	            <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+                <script src="../javascript/formulario.js"></script>
+
+
+            </div>  
+        </div>
+
+    </section>
+    <footer class="Footer">
+        <ul class="Footer-menu">
+            <li class="Footer-menu-item"><a class="Footer-menu-link" href="../index.html">Home</a></li>
+            <li class="Footer-menu-item"><a class="Footer-menu-link" href="categoria-productos.html">Productos</a></li>
+            <li class="Footer-menu-item"><a class="Footer-menu-link" href="nosotros.html">Nosotros</a></li>
+            <li class="Footer-menu-item"><a class="Footer-menu-link" href="contacto.html">Contacto</a></li>            
+        </ul>
+        <div class="Footer-direction">
+            <h2>Dirección</h2>
+            <a href="https://goo.gl/maps/TUqk9SaAVV6n7syp6" target="_blank">Calle Falsa 1234</a>
+        </div>
+
+        <div class="Social">
+            <a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href=""><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+            <a href=""><i class="fa fa-youtube-play"aria-hidden="true"></i></a>
+        </div>
+    </footer> 
+</body>
+</html>
