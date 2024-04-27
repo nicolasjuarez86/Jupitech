@@ -58,7 +58,7 @@
   border: 0;
   top: 50%;
   cursor: pointer;
-  color: #FFF;
+  color: var(--brand-primary);
   opacity: 1;
   line-height: 1;
 
@@ -67,7 +67,7 @@
 .glider-next:hover,
 .glider-prev:focus,
 .glider-next:focus {
-  color: #a89cc8;
+  color: var(--brand-secondary);
 }
 .glider-next {
   right: 10px;

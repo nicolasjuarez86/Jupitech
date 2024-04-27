@@ -73,6 +73,7 @@ a:hover {
 }
 .ViewFull-body {
     color: #000;
+    margin-top: 40px;
     margin-bottom: 40px;
 }
 .ViewFull-body a {
@@ -593,12 +594,18 @@ a:hover {
     font-weight: 300;
 }
 
-.Article-user {
+.Article-users {
     display: flex;
     align-items: center;
     gap: 30px;
     justify-content: center;
     margin:40px 0;
+}
+.Article-user {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    justify-content: center;
 }
 .Article-user-name {
     color: var(--brand-primary);
@@ -614,6 +621,12 @@ a:hover {
 }
 .Article h4 {
     margin: 20px 0;
+}
+
+@media (max-width:65em) {
+    .Article-users {
+        flex-direction: column;
+    }
 }
 
 /** FORM **/   
@@ -711,6 +724,30 @@ a:hover {
  .Frontpage-container.slider-marcas .slide img{
     width: 100%;
  }
+.Frontpage-estrategias {
+    margin-top:40px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.Frontpage-estrategia-titulo {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.Frontpage-estrategia-subtitulo {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+@media (max-width:65em) {
+    .Frontpage-estrategias {
+        flex-direction: column;
+    }
+}
  
  @keyframes scroll{
     0%{
