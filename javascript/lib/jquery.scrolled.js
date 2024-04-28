@@ -2,7 +2,7 @@
 /* SCROLLED */
 
 $(document).ready(function(){
-    var HEADER_HEIGHT = 170;
+    var HEADER_HEIGHT = 160;
     var HEADER_HEIGHT_SCROLLED = 90;
   
     $('.Header').scrolled({

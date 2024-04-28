@@ -4,8 +4,8 @@
 
 :root {
 
-    --brand-primary: #002030;
-    --brand-secondary: #FDD3BA;
+    --brand-primary: #f06020;
+    --brand-secondary: #FFF;
     --brand-primary-rgba: rgba(0, 32, 48, 0.7);
 }
 
@@ -129,10 +129,10 @@ a:hover {
     box-shadow: 0 8px 5px 0 rgba(0,0,0,0.3);
 }
 .isScrolled.Header {
-    border-bottom: 5px solid;
+    border-bottom: 10px solid var(--brand-primary);
 }
 .Header-content {
-    padding: 20px 0;
+    padding: 10px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -144,16 +144,43 @@ a:hover {
     transition: padding 0.5s;
 }
 .Header-logo {
-    display: block;
-    background: url(../images/logo.svg) no-repeat left center/cover;
+    position: relative;
     width: 140px;
-    height: 130px;
-    transition: height 0.5s, width 0.5s;
+    height: 170px;
+}
+.Header-logoa {
+    background: url(../images/logoa.svg) no-repeat left center/contain;
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    transition: all 0.5s;
+}
+.Header-logob {
+    display: block;
+    background: url(../images/logob.svg) no-repeat left center/contain;
+    width: 140px;
+    height: 40px;
+    position: absolute;
+    top: 130px;
+    left: 0;
+    transition: all 0.5s;
 }
 .isScrolled .Header-logo {
-    width: 76px;
-    height: 70px;
-    transition: height 0.5s, width 0.5s;
+    width: 250px;
+    height: 100px;
+    transition: all 0.5s;
+}
+.isScrolled .Header-logoa {
+    transition: all 0.5s;
+    width: 90px;
+    height: 90px;
+}
+.isScrolled .Header-logob {
+    transition: all 0.5s;
+    top: 30px;
+    left: 105px;
 }
 @media (max-width:64em) {
     .Header {
