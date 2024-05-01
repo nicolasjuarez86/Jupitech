@@ -154,7 +154,7 @@ a:hover {
     height: 120px;
     position: absolute;
     top: 5px;
-    left: 10px;
+    left: 0px;
     transition: all 0.5s;
 }
 .Header-logob {
@@ -180,12 +180,43 @@ a:hover {
 .isScrolled .Header-logob {
     transition: all 0.5s;
     top: 30px;
-    left: 105px;
+    left: 95px;
 }
 @media (max-width:64em) {
     .Header {
         padding: 10px 0;
     }
+    .Header-logo {
+        width: 250px;
+        height: 100px;
+        transition: all 0.5s;
+    } 
+    .Header-logoa {
+        transition: all 0.5s;
+        width: 90px;
+        height: 90px;
+    }
+    .Header-logob {
+        transition: all 0.5s;
+        top: 30px;
+        left: 95px;
+    }       
+}
+@media (max-width:44em) {
+    .Header-logo {  
+        width: 200px;
+        height: 90px;
+        transition: all 0.5s;
+    } 
+    .Header-logoa {
+        transition: all 0.5s;
+        width: 90px;
+        height: 90px;
+    }
+    .Header-logob {
+        width: 110px;
+        height: 30px;
+    }  
 }
 
 /** MENU **/
@@ -469,7 +500,9 @@ a:hover {
     color: #FFF;
     text-decoration: none;
 }
-
+.Footer i {
+    margin-right: 10px;
+}
 
 .Footer h3{
     font-size: 30px;
