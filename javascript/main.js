@@ -12,13 +12,15 @@ window.addEventListener('load', function(){
     })
 })
 
-$('.Frontpage-estrategias').each(function(){
-  if ($(this).visible()) {
+
+
+
+  if ($('.Frontpage-estrategias').visible()) {
     console.log('hola nico');
   } else {
     console.log('hola cami');
   }
-});
+
 
 
 
