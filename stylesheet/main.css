@@ -4,11 +4,16 @@
 
 :root {
 
-    --brand-primary: #f06020;
+    --brand-primary: #0c3c60;
     --brand-secondary: #FFF;
     --brand-primary-rgba: rgba(0, 32, 48, 0.7);
 }
 
+
+
+body {
+    background-color: #FFF;
+}
 *{
     box-sizing: border-box;
 }
@@ -118,15 +123,15 @@ a:hover {
 
 
 .Header {
-    background-color: var(--brand-secondary);
+    background-color: var(--brand-primary);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1003;
-    border-bottom: 10px solid var(--brand-primary);
+    border-bottom: 1px solid var(--brand-primary);
     transition: border-bottom 0.5s;
-    box-shadow: 0 8px 5px 0 rgba(0,0,0,0.3);
+    /*box-shadow: 0 8px 5px 0 rgba(0,0,0,0.3);*/
 }
 .isScrolled.Header {
     border-bottom: 10px solid var(--brand-primary);
@@ -145,8 +150,6 @@ a:hover {
 }
 .Header-logo {
     position: relative;
-    width: 110px;
-    height: 130px;
 }
 .Header-logoa {
     background: url(../images/logoa.svg) no-repeat left center/contain;
@@ -156,6 +159,12 @@ a:hover {
     top: 5px;
     left: 10px;
     transition: all 0.5s;
+    display: none;
+}
+.Header-logo-title {
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #FFF;
 }
 .Header-logob {
     display: block;
@@ -166,12 +175,9 @@ a:hover {
     top: 100px;
     left: 0;
     transition: all 0.5s;
+    display: none;
 }
-.isScrolled .Header-logo {
-    width: 250px;
-    height: 100px;
-    transition: all 0.5s;
-}
+
 .isScrolled .Header-logoa {
     transition: all 0.5s;
     width: 90px;
@@ -230,14 +236,15 @@ a:hover {
     position: relative;
 }
 .Menu-link {
-    color: var(--brand-primary);
+    color: #FFF;
     text-decoration: none;
     font-size: 20px;
     border-bottom: 1px solid transparent;
     padding: 10px 0;
 }
 .Menu-link:hover, .Menu-link.Selected {
-    border-bottom-color: var(--brand-primary);
+    border-bottom-color: var(--brand-secondary);
+    color:#FFF;
 }
 @media (max-width:64em) {
     .Menu, .Menu-nav {
@@ -254,16 +261,32 @@ a:hover {
 
 /** SLIDEHOME **/
 
-.SlideHome-slide {
+.SlideHome {
     position: relative;
-}
-.SlideHome-image {
-    height: 500px;
+    height: calc(100vh - 110px);
+    background-image: url('../images/home/home.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    background-attachment: fixed;
 }
-
+.SlideHome-box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.SlideHome-title {
+    font-family: "EB Garamond", serif;
+    line-height: 70px;
+    font-size: 70px;
+    margin-bottom: 40px;
+}
+.SlideHome-text {
+    font-family: "EB Garamond", serif;
+    line-height: 40px;
+    font-size: 40px;
+}
 @media (max-width:50em) {
     .SlideHome-image {
         height: 300px;
@@ -336,49 +359,54 @@ a:hover {
 /** SECTION SERVICIOS **/
 
 .Servicios {
-    padding: 20px;
-}
-.Servicios-item {
-    position: relative;    
     display: flex;
     gap: 30px;
-    margin-bottom: 40px;
+    flex-wrap: wrap;
 }
-.Servicios > :nth-child(2n) .Servicios-item-image {
-    order: 1;
+.Servicios-item {
+    flex: 1 0 350px;
+    box-shadow: 4px 4px 4px;
+    transition: all 0.5seg;
+}
+.Servicios-item:hover {
+    box-shadow: 5px 5px 8px;
+    transition: all 0.5seg;
+
 }
 .Servicios-item-image {
-    flex: 1;
-}
-.Servicios-item-content {
-    flex: 2;
+    display: none;
 }
 .Servicios-item-title {
-    font-size: 40px;
-    line-height: 40px;
-    margin-bottom: 10px;
+    font-size: 30px;
+    line-height: 30px;
+    margin-bottom: 40px;
+    height:100px;
+    box-sizing: border-box;
     color: #022534;
     margin-bottom: 20px;
+    padding: 20px;
     font-weight: 400;
+    text-align: center;
+    background: var(--brand-primary);
+    color:#FFF;
 }
 .Servicios-item:hover .Servicios-item-boton {
     background-color: #FFF;
     color:var(--brand-primary);
     
 }
+.Servicios-item-intro {
+    padding: 20px;
+}
+.Servicios-item-content {
+    border: 1px solid var(--brand-primary);
+    height: 450px;
+}
 @media (max-width: 64em) {
-    .Servicios {
-        padding: 0;
-        grid-template-columns: repeat(2, 1fr);
-    }
+
 }
 @media (max-width: 46em) {
-    .Servicios {
-        grid-template-columns: repeat(1, 1fr);
-    }
-    .Servicios-item-title {
-        font-size: 30px;
-    }
+
 }
 
 
@@ -506,6 +534,9 @@ a:hover {
     color: #FFF;
     text-decoration: none;
 }
+.Footer a:hover {
+    text-decoration:underline;
+}
 .Footer i {
     margin-right: 10px;
 }
@@ -562,7 +593,22 @@ a:hover {
     margin-bottom: 30px;
     text-align: center;
     font-weight: 300;
-    color: var(--brand-primary);
+}
+.Article-pilares {
+    display: flex;    
+    gap: 30px;
+}
+.Article-pilar {
+    border:1px solid var(--brand-primary);
+    padding:20px;
+    background: var(--brand-primary);
+    color:#FFF;
+    flex: 1;
+}
+.Article-pilar-title {
+    font-weight: bold;
+    margin-bottom:40px;
+    text-align: center;
 }
 .Article-description {
     font-size: 1.5rem;
@@ -701,31 +747,12 @@ a:hover {
  .Frontpage-container.slider-marcas .slide img{
     width: 100%;
  }
-.Frontpage-estrategias {
-    margin-top:40px;
-    margin-bottom: 40px;
-    display: flex;
-    gap: 30px;
+.Frontpage-body {
+    max-width: 700px;
+    margin: 50px auto;
 }
-.Frontpage-estrategia {
-    flex: 1;
-}
-.Frontpage-estrategia-titulo {
-    font-size: 25px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: center;
-}
-.Frontpage-estrategia-subtitulo {
-    font-size: 18px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-@media (max-width:65em) {
-    .Frontpage-estrategias {
-        flex-direction: column;
-    }
+.Frontpage-body h2 {
+    margin-bottom: 50px;
 }
  
  @keyframes scroll{
