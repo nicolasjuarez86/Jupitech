@@ -211,7 +211,7 @@ a:hover {
 @media (max-width:44em) {
     .Header-logo {  
         width: 200px;
-        height: 90px;
+        height: 50px;
         transition: all 0.5s;
     } 
     .Header-logoa {
@@ -222,7 +222,11 @@ a:hover {
     .Header-logob {
         width: 110px;
         height: 30px;
-    }  
+    } 
+    .Header-logo-title {
+        font-size: 20px;
+
+    }     
 }
 
 /** MENU **/
@@ -288,9 +292,28 @@ a:hover {
     font-size: 40px;
 }
 @media (max-width:50em) {
-    .SlideHome-image {
-        height: 300px;
+    .SlideHome-box {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: unset;
+        width: 100%;
+        padding: 40px;
     }
+}
+@media (max-width:40em) {
+    .SlideHome {
+        position: relative;
+        height: calc(100vh - 310px);
+    }    
+    .SlideHome-title {
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .SlideHome-text {
+        line-height: 20px;
+        font-size: 20px;
+    }    
 }
 
 
@@ -397,6 +420,7 @@ a:hover {
 }
 .Servicios-item-intro {
     padding: 20px;
+    height: auto;
 }
 .Servicios-item-content {
     border: 1px solid var(--brand-primary);
@@ -406,7 +430,16 @@ a:hover {
 
 }
 @media (max-width: 46em) {
-
+    .Servicios-item {
+        flex: 1;
+    }
+    .Servicios-item-title {
+        font-size:30px;
+        height: auto;
+    }
+    .Servicios-item-content {
+        height: auto;
+    }
 }
 
 
