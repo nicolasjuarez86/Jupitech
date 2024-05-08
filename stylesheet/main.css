@@ -648,13 +648,14 @@ a:hover {
 .Article-pilares {
     display: flex;    
     gap: 30px;
+    flex-wrap: wrap;
 }
 .Article-pilar {
     border:1px solid var(--brand-primary);
     padding:20px;
     background: var(--brand-primary);
     color:#FFF;
-    flex: 1;
+    flex: 1 0 250px;
 }
 .Article-pilar-title {
     font-weight: bold;
@@ -698,6 +699,9 @@ a:hover {
 }
 
 @media (max-width:65em) {
+    .Article {
+        padding:20px 0;
+    }
     .Article-users {
         flex-direction: column;
     }
