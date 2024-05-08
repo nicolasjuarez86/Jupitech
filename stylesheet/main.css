@@ -553,6 +553,7 @@ a:hover {
 }
 
 /** SOCIAL **/
+
 .Social {
     text-align: center;
     padding-bottom: 20px;
@@ -574,6 +575,23 @@ a:hover {
 
 .Social a:hover {
      opacity: 0.9;
+}
+
+.Social-link {
+    margin-top:20px;
+    border: 1px solid;
+    border-radius: 50%;
+    line-height: 30px;
+    width: 30px;
+    text-align: center;
+    display: block;
+}
+.Social-link:hover {
+    background-color:#FFF;
+    color:var(--brand-primary);
+}
+.Social-link i {
+    margin:0;
 }
 
 @media (max-width: 50em) {
