@@ -4,7 +4,7 @@
 
 :root {
 
-    --brand-primary: #0c3c60;
+    --brand-primary: #781fe3;
     --brand-secondary: #FFF;
     --brand-primary-rgba: rgba(0, 32, 48, 0.7);
 }
@@ -131,7 +131,7 @@ a:hover {
     z-index: 1003;
     border-bottom: 1px solid var(--brand-primary);
     transition: border-bottom 0.5s;
-    /*box-shadow: 0 8px 5px 0 rgba(0,0,0,0.3);*/
+    box-shadow: 0 8px 5px 0 rgba(0,0,0,0.3);
 }
 .isScrolled.Header {
     border-bottom: 10px solid var(--brand-primary);
@@ -150,32 +150,11 @@ a:hover {
 }
 .Header-logo {
     position: relative;
-}
-.Header-logoa {
-    background: url(../images/logoa.svg) no-repeat left center/contain;
-    width: 90px;
+    background: url(../images/logo.svg) no-repeat left center/contain;
+    width: 165px;
     height: 90px;
-    position: absolute;
-    top: 5px;
-    left: 10px;
     transition: all 0.5s;
-    display: none;
-}
-.Header-logo-title {
-    font-size: 30px;
-    text-transform: uppercase;
-    color: #FFF;
-}
-.Header-logob {
-    display: block;
-    background: url(../images/logob.svg) no-repeat left center/contain;
-    width: 110px;
-    height: 30px;
-    position: absolute;
-    top: 100px;
-    left: 0;
-    transition: all 0.5s;
-    display: none;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(300deg) brightness(100%) contrast(100%);
 }
 
 .isScrolled .Header-logoa {
@@ -242,9 +221,9 @@ a:hover {
 .Menu-link {
     color: #FFF;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 24px;
     border-bottom: 1px solid transparent;
-    padding: 10px 0;
+    padding: 10px 0;    
 }
 .Menu-link:hover, .Menu-link.Selected {
     border-bottom-color: var(--brand-secondary);
@@ -304,7 +283,7 @@ a:hover {
 @media (max-width:40em) {
     .SlideHome {
         position: relative;
-        height: calc(100vh - 310px);
+        height: calc(100vh - 300px);
     }    
     .SlideHome-title {
         font-size: 30px;
@@ -389,11 +368,12 @@ a:hover {
 .Servicios-item {
     flex: 1 0 350px;
     box-shadow: 4px 4px 4px;
-    transition: all 0.5seg;
+    transition: all 0.5s;
+    border: 1px solid var(--brand-primary);
 }
 .Servicios-item:hover {
     box-shadow: 5px 5px 8px;
-    transition: all 0.5seg;
+    transition: all 0.5s;
 
 }
 .Servicios-item-image {
@@ -423,7 +403,6 @@ a:hover {
     height: auto;
 }
 .Servicios-item-content {
-    border: 1px solid var(--brand-primary);
     height: 450px;
 }
 @media (max-width: 64em) {
@@ -431,7 +410,7 @@ a:hover {
 }
 @media (max-width: 46em) {
     .Servicios-item {
-        flex: 1;
+        flex: 1 0 250px;
     }
     .Servicios-item-title {
         font-size:30px;
