@@ -87,11 +87,7 @@ a:hover {
 .Section {
     background-color: var(--brand-secondary);
 }
-.placeholder {
-    background-color: var(--brand-secondary);
-    width: 100% !important;
-    opacity: 1;
-}
+
 .Video {
     position: relative;
     padding-bottom: 56.25%;
@@ -121,28 +117,62 @@ a:hover {
 
 /** HEADER **/
 
-
+.placeholder {
+    background-color: var(--brand-secondary);
+    width: 100% !important;
+    opacity: 1;
+    height: 150px !important;
+}
 .Header {
-    background-color: var(--brand-primary);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1003;
-    border-bottom: 1px solid var(--brand-primary);
     transition: border-bottom 0.5s;
-    box-shadow: 0 8px 5px 0 rgba(0,0,0,0.3);
+    z-index: 6;
 }
-.isScrolled.Header {
-    border-bottom: 10px solid var(--brand-primary);
-}
+
+.Header::before {
+    content: "";
+    background: url(../images/bg1.png) no-repeat 0 0/cover;
+    position: absolute;
+    left: 0;
+    display: block;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    top: -35px;
+  }
+  .Header::after {
+    background: url(../images/bg.png) no-repeat -135px 20px/cover;
+    position: absolute;
+    left: 0;
+    display: block;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    top: -22px;
+    content: "";
+    transition: all 0.5s;
+
+  }
+
+.isScrolled.Header::before {
+    content: "";
+    background: url(../images/bg1.png) no-repeat 0 0/cover;
+  }
+.isScrolled.Header::after {
+    background: url(../images/bg.png) no-repeat -135px 10px/cover;
+  }
 .Header-content {
     padding: 10px 0;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
     transition: padding 0.5s;
+    z-index: 3;
+    height: 150px;
+    position: relative;
 }
 .isScrolled .Header-content {
     padding: 0;
@@ -168,44 +198,21 @@ a:hover {
     left: 105px;
 }
 @media (max-width:64em) {
-    .Header {
-        padding: 10px 0;
-    }
-    .Header-logo {
-        width: 250px;
-        height: 100px;
-        transition: all 0.5s;
-    } 
-    .Header-logoa {
-        transition: all 0.5s;
-        width: 90px;
-        height: 90px;
-    }
-    .Header-logob {
-        transition: all 0.5s;
-        top: 40px;
-        left: 105px;
-    }       
+ 
 }
 @media (max-width:44em) {
-    .Header-logo {  
-        width: 200px;
-        height: 50px;
-        transition: all 0.5s;
-    } 
-    .Header-logoa {
-        transition: all 0.5s;
-        width: 90px;
-        height: 90px;
+    .Header::before {
+        background: url(../images/bg1.png) no-repeat -315px 0/cover;
     }
-    .Header-logob {
+    .Header::after {
+        background: url(../images/bg.png) no-repeat -60px 20px/cover;
+    }
+    .Header-logo {
+        position: relative;
+        background: url(../images/logo.svg) no-repeat left center/contain;
         width: 110px;
-        height: 30px;
-    } 
-    .Header-logo-title {
-        font-size: 20px;
-
-    }     
+        height: 85px;
+    }    
 }
 
 /** MENU **/
@@ -215,7 +222,6 @@ a:hover {
     list-style: none;
     gap: 30px;
     padding: 0;
-    margin: 30px;
     position: relative;
 }
 .Menu-link {
@@ -223,7 +229,7 @@ a:hover {
     text-decoration: none;
     font-size: 24px;
     border-bottom: 1px solid transparent;
-    padding: 10px 0;    
+    padding: 10px 0 5px;    
 }
 .Menu-link:hover, .Menu-link.Selected {
     border-bottom-color: var(--brand-secondary);
@@ -256,7 +262,7 @@ a:hover {
 .SlideHome-box {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 55%;
     transform: translate(-50%,-50%);
 }
 .SlideHome-title {
@@ -278,9 +284,13 @@ a:hover {
         transform: unset;
         width: 100%;
         padding: 40px;
+        padding-top: 100px;
     }
 }
 @media (max-width:40em) {
+    .SlideHome-box {
+        padding-top: 140px;
+    }
     .SlideHome {
         position: relative;
         height: calc(100vh - 300px);
@@ -528,13 +538,41 @@ a:hover {
 /****** FOOTER ******/  
 
 .Footer {
-    background-color: var(--brand-primary);
     color: #FFF;
     display: flex;
-    padding: 50px 20px;
-    justify-content: space-between;
+    justify-content: flex-end;
     margin: auto;
     gap: 40px;
+    position: relative;
+    height: 200px;
+}
+.Footer::before {
+    content: "";
+    background: url(../images/bgfooter.png) no-repeat 0 0/cover;
+    position: absolute;
+    left: 0;
+    display: block;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    top: -35px;
+  }
+  .Footer::after {
+    background: url(../images/bgfooter1.png) no-repeat 0 20px/cover;
+    position: absolute;
+    left: 0;
+    display: block;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    top: -22px;
+    content: "";
+  }
+.Footer-direction {
+    position: absolute;
+    right: 120px;
+    bottom: 10px;
+    z-index: 6;
 }
 .Footer-menu {
     list-style-type: none;
