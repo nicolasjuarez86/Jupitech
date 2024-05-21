@@ -4,7 +4,7 @@
 
 :root {
 
-    --brand-primary: #781fe3;
+    --brand-primary: #a25ac8;
     --brand-secondary: #FFF;
     --brand-primary-rgba: rgba(0, 32, 48, 0.7);
 }
@@ -121,7 +121,11 @@ a:hover {
     background-color: var(--brand-secondary);
     width: 100% !important;
     opacity: 1;
-    height: 150px !important;
+}
+@media (max-width:40em) {
+    .placeholder {
+        height:130px !important;
+    }
 }
 .Header {
     position: fixed;
@@ -142,9 +146,10 @@ a:hover {
     bottom: 0;
     z-index: 1;
     top: -35px;
+    transition: all 0.5s;
   }
   .Header::after {
-    background: url(../images/bg.png) no-repeat -135px 20px/cover;
+    background: url(../images/bg.png) no-repeat 0 0px/cover;
     position: absolute;
     left: 0;
     display: block;
@@ -154,30 +159,25 @@ a:hover {
     top: -22px;
     content: "";
     transition: all 0.5s;
-
   }
 
 .isScrolled.Header::before {
     content: "";
-    background: url(../images/bg1.png) no-repeat 0 0/cover;
+    background: url(../images/bg1.png) no-repeat 0 -35px/cover;
   }
 .isScrolled.Header::after {
-    background: url(../images/bg.png) no-repeat -135px 10px/cover;
+    background: url(../images/bg.png) no-repeat 0px -20px/cover;
   }
 .Header-content {
     padding: 10px 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
-    transition: padding 0.5s;
     z-index: 3;
-    height: 150px;
+    height: 180px;
     position: relative;
 }
-.isScrolled .Header-content {
-    padding: 0;
-    transition: padding 0.5s;
-}
+
 .Header-logo {
     position: relative;
     background: url(../images/logo.svg) no-repeat left center/contain;
@@ -187,25 +187,21 @@ a:hover {
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(300deg) brightness(100%) contrast(100%);
 }
 
-.isScrolled .Header-logoa {
-    transition: all 0.5s;
-    width: 90px;
-    height: 90px;
-}
-.isScrolled .Header-logob {
-    transition: all 0.5s;
-    top: 40px;
-    left: 105px;
-}
 @media (max-width:64em) {
- 
+    .Header-content {
+        justify-content: space-between;
+    }
+    .isScrolled.Header::before {
+        content: "";
+        background: url(../images/bg1.png) no-repeat -270px 20px/cover;
+    }    
 }
 @media (max-width:44em) {
     .Header::before {
         background: url(../images/bg1.png) no-repeat -315px 0/cover;
     }
     .Header::after {
-        background: url(../images/bg.png) no-repeat -60px 20px/cover;
+        background: url(../images/bg.png) no-repeat -500px 20px/cover;
     }
     .Header-logo {
         position: relative;
@@ -230,10 +226,16 @@ a:hover {
     font-size: 24px;
     border-bottom: 1px solid transparent;
     padding: 10px 0 5px;    
+    transition: all 0.5s;
+    font-family: "Poiret One", sans-serif;
+    font-weight: bold;
 }
 .Menu-link:hover, .Menu-link.Selected {
     border-bottom-color: var(--brand-secondary);
     color:#FFF;
+}
+.isScrolled.Header .Menu-link {
+    font-size:18px;
 }
 @media (max-width:64em) {
     .Menu, .Menu-nav {
@@ -250,123 +252,60 @@ a:hover {
 
 /** SLIDEHOME **/
 
-.SlideHome {
+.Hero {
     position: relative;
-    height: calc(100vh - 110px);
-    background-image: url('../images/home/home.webp');
-    background-size: cover;
+    padding: 100px 20px;
+    background-image: url('../images/home/cohete.png');
+    background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
+    background-position: 900px center;
 }
-.SlideHome-box {
-    position: absolute;
-    left: 50%;
-    top: 55%;
-    transform: translate(-50%,-50%);
+.Hero-title {
+    font-family: "Rubik", serif;
+    line-height: 45px;
+    font-size: 45px;
+    font-weight: bold;
+    color:var(--brand-primary);
+    margin-bottom: 10px;
 }
-.SlideHome-title {
+.Hero-text {
     font-family: "EB Garamond", serif;
-    line-height: 70px;
-    font-size: 70px;
-    margin-bottom: 40px;
-}
-.SlideHome-text {
-    font-family: "EB Garamond", serif;
-    line-height: 40px;
-    font-size: 40px;
+    line-height: 30px;
+    font-size: 30px;
 }
 @media (max-width:50em) {
-    .SlideHome-box {
-        position: relative;
-        left: auto;
-        top: auto;
-        transform: unset;
-        width: 100%;
-        padding: 40px;
-        padding-top: 100px;
-    }
+
 }
 @media (max-width:40em) {
-    .SlideHome-box {
-        padding-top: 140px;
+    .Hero {
+        padding: 20px 20px 250px;
+        background-position: center bottom;
+        background-size: 300px auto;
     }
-    .SlideHome {
-        position: relative;
-        height: calc(100vh - 300px);
-    }    
-    .SlideHome-title {
-        font-size: 30px;
-        line-height: 30px;
+    .Hero-title {
+        line-height: 35px;
+        font-size: 35px;
     }
-    .SlideHome-text {
+    .Hero-text {
         line-height: 20px;
         font-size: 20px;
-    }    
+    }
 }
 
 
 /** FRONTPAGE **/
 
-.Frontpage {
-    background-image: url(../images/home/frontpagebg.webp);
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: 0;
-}
-.Frontpage-container {
-  /* background-color: var(--brand-primary-rgba);*/
-  background-image: linear-gradient(to right, #d6d6d61f, #d8d8d885, #b3b3b3ea, #bebebee5, #f4f9ffe0, #ffffffd7, #ebebebdc, #ebe9e9e3, #cfcfcff1, #e7e7e7ec, #d8d8d867, #ffffff3b);
-    padding: 40px 0;
-}
-.Frontpage-container .content-container {
-    display: flex;
-    gap: 50px;    
-}
-.Frontpage-container--inverted .Frontpage-container-image {
-    order: 2;
-}
-.Frontpage-container-info {
-    flex:1;
-}
-.Frontpage-container .boton {
-    position: absolute;
-    bottom:0;
+
+.Frontpage-body b {
+    color: var(--brand-primary); 
 }
 
-.Frontpage-container-image {
-    width: 300px;
-    height:360px;
-    background-size: cover;
-    flex:1;
-}
-.Frontpage-contacto {
-    background-color: #FFF;
-    padding: 40px 20px;
-}
+
+
 @media (max-width:50em) {
-    .Frontpage-container .content-container {
-        flex-direction: column;
-    }
-    .Frontpage-container .boton {
-        position: static;
-    }
-    .Frontpage-container-image {
-        align-self: center;
-        flex: auto;
-        width: 100%;
-    }  
-    .Frontpage-container--inverted .Frontpage-container-image {
-        order: 0;
-    }  
+
 }
-@media (max-width:30em) {
-    .Frontpage-container-image {
-        background-size: contain;
-        background-repeat: no-repeat;
-        height: 200px;
-    }
-}
+
 
 /** SECTION SERVICIOS **/
 
@@ -556,8 +495,8 @@ a:hover {
     bottom: 0;
     z-index: 2;
     top: -35px;
-  }
-  .Footer::after {
+}
+.Footer::after {
     background: url(../images/bgfooter1.png) no-repeat 0 20px/cover;
     position: absolute;
     left: 0;
@@ -567,7 +506,7 @@ a:hover {
     z-index: 1;
     top: -22px;
     content: "";
-  }
+}
 .Footer-direction {
     position: absolute;
     right: 120px;
@@ -597,9 +536,12 @@ a:hover {
 }
 
 @media (max-width: 50em) {
-    .Footer {
-        flex-direction: column;
+    .Footer::before {
+        background: url(../images/bgfooter.png) no-repeat -255px 0/cover;
     }
+    .Footer::after {
+        background: url(../images/bgfooter1.png) no-repeat 0 -35px/cover;
+    }    
 }
 
 /** SOCIAL **/
@@ -628,7 +570,7 @@ a:hover {
 }
 
 .Social-link {
-    margin-top:20px;
+    margin-top:2px;
     border: 1px solid;
     border-radius: 50%;
     line-height: 30px;
@@ -799,26 +741,7 @@ a:hover {
     }
 }
 
-.Frontpage-container .slider-marcas{
-    max-width: 1200px;
-    height: auto;
-    margin: auto;
-    overflow: hidden;
- }
- 
- .Frontpage-container .slider-marcas .slide-track{
-    display: flex;
-    animation: scroll 40s linear infinite;
-    width: calc(200px * 12);
- }
- 
- .Frontpage-container.slider-marcas .slide{
-    width: 200px;
- }
- 
- .Frontpage-container.slider-marcas .slide img{
-    width: 100%;
- }
+
 .Frontpage-body {
     max-width: 700px;
     margin: 50px auto;

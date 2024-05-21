@@ -2,10 +2,10 @@
 /* SCROLLED */
 
 $(document).ready(function(){
-    var HEADER_HEIGHT = 160;
-    var HEADER_HEIGHT_SCROLLED = 90;
+    var HEADER_HEIGHT = 190;
+    var HEADER_HEIGHT_SCROLLED = 100;
   
-    $('.Header-scroll').scrolled({
+    $('.Header').scrolled({
       scroll: HEADER_HEIGHT - HEADER_HEIGHT_SCROLLED
     });
   });
