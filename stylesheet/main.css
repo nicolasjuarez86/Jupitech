@@ -13,6 +13,7 @@
 
 body {
     background-color: #FFF;
+    font-family: 'Montserrat', sans-serif;
 }
 *{
     box-sizing: border-box;
@@ -131,6 +132,12 @@ a:hover {
     width: 100%;
     transition: border-bottom 0.5s;
     z-index: 6;
+    transition: background-color 0.5s;
+}
+@media (min-width:64em) {
+    .isScrolled.Header {
+        background-color: var(--brand-primary);
+    }
 }
 
 .Header::before {
@@ -144,8 +151,8 @@ a:hover {
     z-index: 1;
     top: -35px;
     transition: all 0.5s;
-  }
-  .Header::after {
+}
+.Header::after {
     background: url(../images/bg.png) no-repeat 0 0px/cover;
     position: absolute;
     left: 0;
@@ -156,25 +163,35 @@ a:hover {
     top: -22px;
     content: "";
     transition: all 0.5s;
-  }
-
+}
 .isScrolled.Header::before {
-    content: "";
-    background: url(../images/bg1.png) no-repeat 0 -60px/cover;
-  }
+    background-position: 0 -60px;
+}
 .isScrolled.Header::after {
-    background: url(../images/bg.png) no-repeat 0px -80px/cover;
-  }
+    background-position: 0px -80px;
+}
+@media (min-width:64em) {
+    .isScrolled.Header::before {
+        opacity: 0;
+    }
+    .isScrolled.Header::after {
+        opacity: 0;
+    }
+}
 .Header-content {
-    padding: 10px 0;
     display: flex;
     justify-content: space-between;
     width: 100%;
     z-index: 3;
     height: 180px;
     position: relative;
+    transition: all 0.5s;
+    align-items: flex-start;
 }
-
+.isScrolled .Header-content {
+    height: 90px;
+    align-items: center;
+}
 .Header-logo {
     position: relative;
     background: url(../images/logo.svg) no-repeat left center/contain;
@@ -186,23 +203,24 @@ a:hover {
 .isScrolled .Header-logo {
     width: 115px;
     height: 60px;
-    margin-left: 80px;    
 }
 @media (max-width:64em) {
     .Header-content {
         justify-content: space-between;
     }
     .isScrolled.Header::before {
-        content: "";
-        background: url(../images/bg1.png) no-repeat -270px 20px/cover;
+        background-position: -270px 20px;
+    }    
+    .isScrolled.Header::after {
+        background-position: 0;
     }    
 }
 @media (max-width:44em) {
     .Header::before {
-        background: url(../images/bg1.png) no-repeat -315px 0/cover;
+        background-position: -315px 0;
     }
     .Header::after {
-        background: url(../images/bg.png) no-repeat -500px 20px/cover;
+        background-position: -500px 20px;
     }
     .Header-logo {
         position: relative;
@@ -223,24 +241,24 @@ a:hover {
     gap: 30px;
     padding: 0;
     position: relative;
+    margin-bottom: 0;
 }
 .Menu-link {
     color: #FFF;
     text-decoration: none;
     font-size: 24px;
     border-bottom: 1px solid transparent;
-    padding: 10px 0 5px;    
+    padding: 10px 0 3px;    
     transition: all 0.5s;
-    font-family: "Poiret One", sans-serif;
-    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+    /*font-family: "Poiret One", sans-serif;*/
+    font-weight: 300;
 }
 .Menu-link:hover, .Menu-link.Selected {
     border-bottom-color: #FFF;
     color:#FFF;
 }
-.isScrolled.Header .Menu-link {
-    font-size:18px;
-}
+
 @media (max-width:64em) {
     .Menu, .Menu-nav {
         display:none;
@@ -262,24 +280,23 @@ a:hover {
     background-image: url('../images/home/cohete.png');
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: 900px center;
+    background-position: 750px center;
+    margin-bottom: 80px;
 }
 .Hero-title {
     font-family: "Rubik", serif;
-    line-height: 45px;
-    font-size: 45px;
+    line-height: 40px;
+    font-size: 40px;
     font-weight: bold;
     color:var(--brand-primary);
     margin-bottom: 10px;
 }
 .Hero-text {
-    font-family: "EB Garamond", serif;
-    line-height: 30px;
-    font-size: 30px;
+    font-family: "Montserrat", serif;
+    line-height: 24 px;
+    font-size: 24px;
 }
-@media (max-width:50em) {
 
-}
 @media (max-width:40em) {
     .Hero {
         padding: 20px 20px 250px;
@@ -300,23 +317,21 @@ a:hover {
 /** FRONTPAGE **/
 
 
-.Frontpage-body {
-    max-width: 900px;
-    margin: 50px auto;
-    text-align: center;
-}
-.Frontpage-body b {
+
+.Frontpage b {
     color: var(--brand-primary); 
 
 }
-.Frontpage-body h2 {
+.Frontpage h2 {
     font-family: "Rubik", serif;
     font-size: 40px;
     color: var(--brand-primary); 
+    text-align: center;
 }
-.Frontpage-body h3 {
+.Frontpage h3 {
     margin-bottom: 50px;
-    font-family: "Poiret One", sans-serif;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
     font-weight: bold;
 }
 
@@ -325,6 +340,7 @@ a:hover {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    text-align: center;
 }
 .Adn-item {
     flex:1 0 250px;
@@ -332,13 +348,20 @@ a:hover {
     padding: 20px;
     border-radius: 50px;
     box-shadow: 5px 5px 50px 10px #EBEBEB;
-    font-family: "Poiret One", sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 .Adn-title {
     font-family: "Rubik", serif;
     font-size: 25px;
     color: var(--brand-primary);
     margin-bottom: 40px;
+}
+@media (max-width: 46em) {
+    .Adn-items {
+        overflow: hidden;
+        margin: 0 -20px;
+        padding: 40px 20px;
+    }
 }
 
 
@@ -351,15 +374,8 @@ a:hover {
 }
 .Servicios-item {
     flex: 1 0 350px;
-    box-shadow: 4px 4px 4px;
-    transition: all 0.5s;
-    border: 1px solid var(--brand-primary);
 }
-.Servicios-item:hover {
-    box-shadow: 5px 5px 8px;
-    transition: all 0.5s;
 
-}
 .Servicios-item-image {
     display: none;
 }
@@ -370,27 +386,44 @@ a:hover {
     height:100px;
     box-sizing: border-box;
     color: #022534;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     padding: 20px;
     font-weight: 400;
     text-align: center;
     background: var(--brand-primary);
     color:#FFF;
 }
-.Servicios-item:hover .Servicios-item-boton {
-    background-color: #FFF;
-    color:var(--brand-primary);
-    
-}
+
 .Servicios-item-intro {
     padding: 20px;
-    height: auto;
+    height: 350px;
+    border: 1px solid var(--brand-primary);
 }
-.Servicios-item-content {
-    height: 450px;
-}
-@media (max-width: 64em) {
-
+@media (min-width: 46em) {
+    .Servicios-item:nth-child(1) .Servicios-item-intro {
+        border-radius: 0 0 50px 0;
+    }
+    .Servicios-item:nth-child(3) .Servicios-item-intro {
+        border-radius: 0 0 0 50px;
+    }
+    .Servicios-item:nth-child(4) .Servicios-item-intro {
+        border-radius: 0 0 50px 0;
+    }
+    .Servicios-item:nth-child(6) .Servicios-item-intro {
+        border-radius: 0 0 0 50px;
+    }
+    .Servicios-item:nth-child(1) .Servicios-item-title {
+        border-radius: 50px 0 0 0;
+    }
+    .Servicios-item:nth-child(3) .Servicios-item-title {
+        border-radius: 0 50px 0 0;
+    }
+    .Servicios-item:nth-child(4) .Servicios-item-title {
+        border-radius: 50px 0 0 0;
+    }
+    .Servicios-item:nth-child(6) .Servicios-item-title {
+        border-radius: 0 50px 0 0;
+    }
 }
 @media (max-width: 46em) {
     .Servicios-item {
@@ -404,7 +437,12 @@ a:hover {
         height: auto;
     }
 }
-
+@media (max-width: 46em) {
+    .Servicios-item-intro {
+        height: auto;
+        min-height: 200px;
+    }    
+}
 
 /** TABS **/
 
@@ -606,15 +644,14 @@ a:hover {
 
 
 .Article {
-    background-color: #FFF;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    padding: 40px 20px;
+    margin:80px 0;
 }
 .Article-body {
     font-size: 2rem;
     margin-bottom: 30px;
     text-align: center;
     font-weight: 300;
+    margin-bottom: 80px;
 }
 .Article-pilares {
     display: flex;    
