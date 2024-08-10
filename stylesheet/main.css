@@ -73,6 +73,8 @@ a:hover {
 .Title {
     color: var(--brand-primary);
     margin-bottom: 40px;
+    text-align: center;
+    font-size: 3rem;
 }
 .ViewFull {
     padding:40px 0;
@@ -284,7 +286,7 @@ a:hover {
     margin-bottom: 80px;
 }
 .Hero-title {
-    font-family: "Rubik", serif;
+    font-family: "Roboto", serif;
     line-height: 40px;
     font-size: 40px;
     font-weight: bold;
@@ -323,7 +325,7 @@ a:hover {
 
 }
 .Frontpage h2 {
-    font-family: "Rubik", serif;
+    font-family: "Roboto", serif;
     font-size: 40px;
     color: var(--brand-primary); 
     text-align: center;
@@ -351,7 +353,7 @@ a:hover {
     font-family: "Montserrat", sans-serif;
 }
 .Adn-title {
-    font-family: "Rubik", serif;
+    font-family: "Roboto", serif;
     font-size: 25px;
     color: var(--brand-primary);
     margin-bottom: 40px;
@@ -644,7 +646,7 @@ a:hover {
 
 
 .Article {
-    margin:80px 0;
+    margin-top:80px;
 }
 .Article-body {
     font-size: 2rem;
@@ -652,6 +654,8 @@ a:hover {
     text-align: center;
     font-weight: 300;
     margin-bottom: 80px;
+    font-family: "Roboto", serif;
+
 }
 .Article-pilares {
     display: flex;    
@@ -659,16 +663,19 @@ a:hover {
     flex-wrap: wrap;
 }
 .Article-pilar {
-    border:1px solid var(--brand-primary);
+    border:2px solid var(--brand-primary);
     padding:20px;
-    background: var(--brand-primary);
-    color:#FFF;
     flex: 1 0 250px;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 5px 5px 50px 10px #EBEBEB;
 }
 .Article-pilar-title {
     font-weight: bold;
     margin-bottom:40px;
     text-align: center;
+    font-family: "Roboto", serif;
+    font-size: 19px;
 }
 .Article-description {
     font-size: 1.5rem;
