@@ -603,32 +603,36 @@ a:hover {
     padding-bottom: 20px;
     color: #FFF;
  }   
+ .Social-floating {
+    position: fixed;
+    right: 20px;
+    bottom: 100px;
+    z-index: 1000;
+ }
  
- 
- .Social a{
-    font-size: 30px;
-    color: #FFF;
-    opacity: 0,70;
-    width: 40px;
-    height: 40px;
+.Social-link {
+    font-size: 20px;
+    width: 32px;
     display: inline-block;  
     line-height: 30px;
-    margin: 0 10px;
-    opacity: 0.7;
- }
-
-.Social a:hover {
-     opacity: 0.9;
-}
-
-.Social-link {
     margin-top:2px;
     border: 1px solid;
     border-radius: 50%;
-    line-height: 30px;
-    width: 30px;
     text-align: center;
-    display: block;
+}
+.Social-wsp {
+    background-color: #0CC243;
+    border-color: transparent;
+    font-size: 30px;
+    width: 42px;
+    line-height: 40px;
+}
+.Social-wsp i {
+    color:#FFF;
+}
+.Social-wsp:hover i {
+    background-color:#FFF;
+    color:var(--brand-primary);
 }
 .Social-link:hover {
     background-color:#FFF;
@@ -638,9 +642,13 @@ a:hover {
     margin:0;
 }
 
+
 @media (max-width: 50em) {
     .Social {
         text-align: left;
+    }
+    .Social-floating {
+        right: 10px;
     }
 }   
 
